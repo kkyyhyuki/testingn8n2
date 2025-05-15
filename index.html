@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naratel - Platform Belajar Digital Marketing & AI. Wujudkan karir impian di era digital bersama Naratel.">
+    <title>Naratel - Belajar Digital Marketing & AI</title>
+    <!-- Link ke file CSS eksternal jika ada, untuk styling (opsional tapi direkomendasikan) -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        /* Styling dasar agar tampilannya lebih rapi */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        header {
+            background: #007bff; /* Biru khas atau profesional */
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin-top: 5px;
+            font-size: 1.1em;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            margin-top: 15px;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #e9ecef; /* Warna lebih terang saat hover */
+        }
+
+        /* Hero Section */
+        #hero {
+            background: url('https://c4.wallpaperflare.com/wallpaper/847/91/815/detective-conan-anime-hd-wallpaper-preview.jpg') no-repeat center center/cover; /* Ganti dengan gambar latar yang relevan */
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            /* Overlay agar teks mudah dibaca */
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5); /* Semi-transparan gelap */
+            }
+        }
+        #hero .container {
+             position: relative; /* Penting agar konten di atas overlay */
+             z-index: 1;
+        }
+        #hero h2 {
+            color: #fff;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        #hero p {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            background: #28a745; /* Hijau untuk call to action */
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background 0.3s ease;
+        }
+        .button:hover {
+            background: #218838;
+        }
+
+        main {
+            padding: 20px 0;
+        }
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+         section:last-child {
+            border-bottom: none;
+         }
+        h2 {
+            color: #007bff; /* Biru */
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        .content-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .program-list, .feature-list {
+            list-style: none;
+            padding: 0;
+            display: flex; /* Menggunakan flexbox untuk tata letak kolom jika memungkinkan */
+            flex-wrap: wrap; /* Wrap item ke baris berikutnya jika tidak muat */
+            gap: 20px; /* Jarak antar item */
+            justify-content: center; /* Pusatkan item */
+        }
+        .program-list li, .feature-list li {
+            background: #e9ecef; /* Warna latar item */
+            padding: 20px;
+            border-left: 5px solid #007bff; /* Garis biru di kiri */
+            border-radius: 5px;
+            flex: 1 1 300px; /* Flex-grow, flex-shrink, basis width */
+            max-width: 350px; /* Batasi lebar maksimal item */
+        }
+        .program-list li h3, .feature-list li h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        #testimoni .testimonial-item {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            font-style: italic;
+            border-left: 5px solid #ffc107; /* Kuning untuk testimoni */
+        }
+        #testimoni .testimonial-item p {
+            margin-bottom: 10px;
+        }
+         #testimoni .testimonial-item .author {
+            text-align: right;
+            font-weight: bold;
+            font-style: normal;
+            color: #555;
+        }
+        #kontak .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+         #kontak .contact-info p {
+            margin: 5px 0;
+         }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #343a40; /* Gelap */
+            color: #fff;
+            font-size: 0.9em;
+        }
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsif dasar */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+             nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+            #hero h2 {
+                font-size: 2.5em;
+            }
+            #hero p {
+                font-size: 1.1em;
+            }
+             .program-list, .feature-list {
+                flex-direction: column; /* Tumpuk item di layar kecil */
+                align-items: center; /* Pusatkan item */
+            }
+            .program-list li, .feature-list li {
+                 width: 90%; /* Ambil sebagian besar lebar */
+                 max-width: none; /* Hapus batasan max-width */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Naratel</h1>
+            <p>Wujudkan Karir Impian di Era Digital</p>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Beranda</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="#program">Program</a></li>
+                    <li><a href="#testimoni">Testimoni</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                    <li><a href="https://naratel.net.id/" class="button" style="background: #ffc107; color: #333; padding: 8px 15px;">Login Member</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>Belajar Digital Marketing & AI untuk Masa Depanmu</h2>
+                <p>Platform online terpadu dengan materi berkualitas, komunitas supportif, dan bimbingan ahli.</p>
+                <a href="#kontak" class="button">Gabung Sekarang!</a>
+                <p style="margin-top: 15px; font-size: 0.9em;"><em></em></p>
+            </div>
+        </section>
+
+        <section id="tentang">
+            <div class="container">
+                <h2>Tentang Naratel</h2>
+                <div class="content-block">
+                     <p>Naratel hadir sebagai solusi bagi individu yang ingin menguasai keterampilan digital, khususnya Digital Marketing dan Artificial Intelligence (AI), yang semakin krusial di era modern.</p>
+                     <p>Kami percaya bahwa setiap orang berhak memiliki akses mudah dan terjangkau untuk belajar, berinteraksi, dan mengembangkan potensi diri di bidang teknologi digital.</p>
+                     <p>Dengan kurikulum yang relevan dan praktis, Naratel siap membimbing Anda dari nol hingga mahir, mempersiapkan Anda untuk peluang karir yang luas di dunia digital.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="program">
+            <div class="container">
+                <h2>Apa yang Kamu Dapatkan di Naratel?</h2>
+                <ul class="feature-list">
+                    <li>
+                        <h3>Akses Materi Video Berkualitas</h3>
+                        <p>Pelajari konsep dan praktik Digital Marketing & AI melalui video tutorial yang mudah dipahami, kapan saja, di mana saja.</p>
+                    </li>
+                    <li>
+                        <h3>Group Komunitas Belajar Aktif</h3>
+                        <p>Bergabunglah dengan komunitas sesama pembelajar, berdiskusi, berbagi insight, dan dapatkan dukungan untuk pertanyaan Anda.</p>
+                    </li>
+                    <li>
+                        <h3>Live Webinar Mingguan</h3>
+                        <p>Ikuti sesi langsung dengan mentor dan praktisi industri untuk mendapatkan update terbaru, tips mendalam, dan studi kasus nyata.</p>
+                    </li>
+                    <li>
+                        <h3>Sertifikat Kompetensi</h3>
+                        <p>Dapatkan sertifikat setelah menyelesaikan program sebagai bukti keterampilan dan kesiapan Anda memasuki dunia profesional.</p>
+                    </li>
+                     <li>
+                        <h3>Bimbingan Mentor Berpengalaman</h3>
+                        <p>Dapatkan arahan dan feedback langsung dari mentor yang sudah berpengalaman di bidang Digital Marketing dan AI.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="testimoni">
+            <div class="container">
+                <h2>Apa Kata Mereka?</h2>
+                <div class="testimonial-item">
+                    <p>"Bergabung dengan Naratel adalah keputusan terbaik! Materi mudah dicerna, komunitasnya sangat membantu, dan webinar live-nya insightful banget."</p>
+                    <p class="author">- Budi S., Mahasiswa</p>
+                </div>
+                 <div class="testimonial-item">
+                    <p>"Saya yang awalnya gaptek Digital Marketing, sekarang sudah bisa handle beberapa campaign dasar berkat bimbingan di Naratel. Sangat direkomendasikan!"</p>
+                    <p class="author">- Siti A., Pegawai Swasta</p>
+                </div>
+                 <!-- Anda bisa menambahkan lebih banyak testimoni di sini -->
+            </div>
+        </section>
+
+        <section id="kontak">
+            <div class="container">
+                <h2>Siap Mengubah Masa Depanmu?</h2>
+                <div class="contact-info">
+                    <p>Jangan lewatkan kesempatan untuk menguasai keterampilan digital yang paling dicari!</p>
+                    <p>Bergabunglah dengan ribuan pembelajar lainnya di Naratel.</p>
+                    <!-- Ganti # dengan link pendaftaran atau section pendaftaran jika ada -->
+                    <a href="https://kaptennaratel.com/#daftar-form-placeholder" class="button" style="margin-top: 15px;">Daftar Sekarang Juga!</a>
+                    <p style="margin-top: 20px;">Info Lebih Lanjut:</p>
+                    <p>Email: info@naratel.com (Placeholder)</p>
+                    <p>WhatsApp: +62-XXX-XXXX (Placeholder)</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Naratel. All rights reserved.</p>
+            <p>Dibuat dengan inspirasi dari website resmi Naratel.</p>
+        </div>
+    </footer>
+
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+      createChat({
+        webhookUrl: 'https://playground.naratel.net.id/webhook/195a7dfd-3234-47c4-a442-314a0ccbd538/chat , '
+      });
+    </script>
+
+</body>
+</html>
